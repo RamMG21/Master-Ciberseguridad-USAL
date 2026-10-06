@@ -1,0 +1,15 @@
+Sobre la asignatura 
+Introducción a la ciberinteligencia: Proporcionar una base sólida en el uso de fuentes abiertas (OSINT) y en
+el análisis de información en redes sociales (SOCMINT).
+
+- Análisis en entornos específicos: Enseñar el uso de herramientas y metodologías para realizar análisis de
+amenazas en la deep web y dark web.
+  
+- Inteligencia de amenazas: Desarrollar competencias en el análisis de inteligencia sobre ciberamenazas,
+con un enfoque práctico en la identificación y seguimiento de riesgos emergentes.
+  
+- Tendencias tecnológicas: Analizar las últimas tendencias en ciberseguridad, como IoT, inteligencia artificial
+y aprendizaje automático, para aplicar estas tecnologías en la ciberinteligencia.
+  
+- Trabajo práctico con herramientas: Capacitar a los estudiantes a través de talleres prácticos en OSINT,
+SOCMINT y threat intelligence, permitiéndoles poner en práctica los conceptos aprendidos.

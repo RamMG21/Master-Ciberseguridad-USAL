@@ -1,0 +1,203 @@
+/*!
+ Copyright (c) 2026 Kleissner Investments s.r.o.
+ Unauthorized copying or usage of this file, via any medium is strictly prohibited Proprietary and confidential.
+ */
+
+/*
+Date filter of the advanced search panel on the start page (the "Date" tab).
+
+Renders a preset list (same presets as identity.intelx.io) and a custom From/To
+range with native date inputs into the tab. The applied range is written as
+inclusive YYYY-MM-DD strings into the hidden form fields date_from / date_to,
+which the search request reads; the Settings filter row shows it as a chip.
+
+    dateRange.init();                          // once, on the start page
+    dateRange.set('2026-01-01', '2026-01-31'); // apply a range (history / URL restore)
+    dateRange.set(null);                       // clear
+*/
+var dateRange = (function () {
+  'use strict';
+
+  var fromHidden, toHidden, fromInput, toInput, items, customItem;
+  var chosen = -1; // index of the list item the user clicked last: a preset, presets.length for "Custom Range", -1 for none
+
+  function pad2(n) {
+    return n < 10 ? '0' + n : '' + n;
+  }
+
+  // date only, local time
+  function today() {
+    var d = new Date();
+    return new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  }
+
+  function addDays(d, n) {
+    return new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
+  }
+
+  function formatISO(d) {
+    return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+  }
+
+  // parses YYYY-MM-DD; null when empty or malformed
+  function parseISO(s) {
+    if (!s || s.length !== 10 || s.charAt(4) !== '-' || s.charAt(7) !== '-') {
+      return null;
+    }
+    var y = Number(s.substring(0, 4)), m = Number(s.substring(5, 7)), day = Number(s.substring(8, 10));
+    if (!y || !m || !day) {
+      return null;
+    }
+    return new Date(y, m - 1, day);
+  }
+
+  // preset ranges as [first day, last day], both inclusive — the same days as the
+  // identity.intelx.io presets, which express them as [start, end) with an exclusive end
+  var presets = [
+    {label: 'Today', range: function (t) { return [t, t]; }},
+    {label: 'Yesterday', range: function (t) { return [addDays(t, -1), addDays(t, -1)]; }},
+    {label: 'Last 7 Days', range: function (t) { return [addDays(t, -6), t]; }},
+    {label: 'Last 30 Days', range: function (t) { return [addDays(t, -29), t]; }},
+    {label: 'This Month', range: function (t) { return [new Date(t.getFullYear(), t.getMonth(), 1), t]; }},
+    {label: 'Last Month', range: function (t) { return [new Date(t.getFullYear(), t.getMonth() - 1, 1), new Date(t.getFullYear(), t.getMonth(), 0)]; }},
+    {label: 'This Year', range: function (t) { return [new Date(t.getFullYear(), 0, 1), t]; }},
+    {label: 'Last Year', range: function (t) { return [new Date(t.getFullYear() - 1, 0, 1), new Date(t.getFullYear() - 1, 11, 31)]; }}
+  ];
+
+  function el(tag, className, text) {
+    var e = document.createElement(tag);
+    if (className) {
+      e.className = className;
+    }
+    if (text) {
+      e.textContent = text;
+    }
+    return e;
+  }
+
+  // highlights exactly one list item: the clicked preset while it still describes the applied range, otherwise the first
+  // preset that does (several can on some days: "Last 7 Days" and "This Month" are the same range on the 7th of a month);
+  // "Custom Range" when the user chose it or the range matches no preset
+  function markActive() {
+    var from = parseISO(fromHidden.value), to = parseISO(toHidden.value);
+    var t = today(), customChosen = chosen === presets.length, match = -1;
+    if (!customChosen && from !== null && to !== null) {
+      var matches = function (i) {
+        var r = presets[i].range(t);
+        return r[0].getTime() === from.getTime() && r[1].getTime() === to.getTime();
+      };
+      if (chosen >= 0 && matches(chosen)) {
+        match = chosen;
+      } else {
+        for (var i = 0; i < presets.length && match < 0; i++) {
+          if (matches(i)) {
+            match = i;
+          }
+        }
+      }
+    }
+    items.forEach(function (li, i) {
+      li.classList.toggle('active', i === match);
+    });
+    customItem.classList.toggle('active', customChosen || (from !== null && to !== null && match < 0));
+  }
+
+  // writes the range into the hidden form fields and the filter chip; from/to are Date or null
+  function apply(from, to) {
+    fromHidden.value = from ? formatISO(from) : '';
+    toHidden.value = to ? formatISO(to) : '';
+    fromInput.value = fromHidden.value;
+    toInput.value = toHidden.value;
+    toInput.min = fromHidden.value;
+    markActive();
+    var old = byId('date_range');
+    if (old) {
+      old.remove();
+    }
+    if (from && to) {
+      document.querySelector('#adv_settings > div').append(advFilter('date_range', null, 'adv_date', fromHidden.value + ' - ' + toHidden.value));
+    }
+  }
+
+  // the custom inputs apply on every change; an end before the start is pulled up to the start
+  function customChanged() {
+    var from = parseISO(fromInput.value), to = parseISO(toInput.value);
+    if (from && to && to < from) {
+      to = from;
+    }
+    if (from && to) {
+      apply(from, to);
+    } else {
+      fromHidden.value = from ? formatISO(from) : '';
+      toHidden.value = to ? formatISO(to) : '';
+      toInput.min = fromHidden.value;
+      markActive();
+      var old = byId('date_range');
+    if (old) {
+      old.remove();
+    }
+    }
+  }
+
+  function init() {
+    var container = document.getElementById('date_range_picker');
+    if (!container) {
+      return;
+    }
+    fromHidden = document.getElementById('date_from_hidden');
+    toHidden = document.getElementById('date_to_hidden');
+
+    var list = el('ul', 'daterange-presets');
+    items = presets.map(function (p) {
+      var li = el('li', '', p.label);
+      li.addEventListener('click', function () {
+        chosen = presets.indexOf(p);
+        var r = p.range(today());
+        apply(r[0], r[1]);
+      });
+      list.appendChild(li);
+      return li;
+    });
+    customItem = el('li', '', 'Custom Range');
+    customItem.addEventListener('click', function () {
+      chosen = presets.length;
+      markActive();
+      fromInput.focus();
+    });
+    list.appendChild(customItem);
+    container.appendChild(list);
+
+    var custom = el('div', 'daterange-custom');
+    var max = formatISO(today());
+    fromInput = el('input');
+    fromInput.type = 'date';
+    fromInput.id = 'daterange_from';
+    fromInput.max = max;
+    toInput = el('input');
+    toInput.type = 'date';
+    toInput.id = 'daterange_to';
+    toInput.max = max;
+    var fromLabel = el('label', '', 'From');
+    fromLabel.appendChild(fromInput);
+    var toLabel = el('label', '', 'To');
+    toLabel.appendChild(toInput);
+    custom.appendChild(fromLabel);
+    custom.appendChild(toLabel);
+    container.appendChild(custom);
+
+    fromInput.addEventListener('change', customChanged);
+    toInput.addEventListener('change', customChanged);
+  }
+
+  // applies a range given as YYYY-MM-DD strings; set(null) clears. Safe to call on pages without the picker.
+  function set(from, to) {
+    if (!fromInput) {
+      return;
+    }
+    chosen = -1;
+    var f = parseISO(from), t = parseISO(to);
+    apply(f && t ? f : null, f && t ? t : null);
+  }
+
+  return {init: init, set: set};
+})();

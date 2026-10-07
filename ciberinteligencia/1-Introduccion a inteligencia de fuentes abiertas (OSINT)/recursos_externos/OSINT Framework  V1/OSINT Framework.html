@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)https://osintframework.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <!-- Viewport Settings -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link type="text/css" rel="stylesheet" href="./OSINT Framework_files/arf.css">
+    <link type="text/css" rel="stylesheet" href="./OSINT Framework_files/panel.css">
+    <script type="text/javascript" src="./OSINT Framework_files/d3.min.js.download"></script>
+    <title>OSINT Framework</title>
+  </head>
+  <body><noscript>
+    <p>Sorry, Your browser does not support JavaScript! Activate JavaScript on your browser or look for a compatible
+      browser to use the site.</p>
+  </noscript>
+  
+    <!-- Apply light-mode class immediately if stored preference is light -->
+    <script>
+      (function() {
+        if (localStorage.getItem("theme") === "light") {
+          document.body.classList.add("light-mode");
+        }
+      })();
+    </script>
+    <div id="body">
+      <div id="header">
+        <span id="header-title">OSINT Framework</span>
+        <div id="header-actions">
+          <button id="header-notes-btn" onclick="toggleNotesPanel()">Notes</button>
+          <button id="header-theme-toggle" onclick="goDark()">Light Mode</button>
+        </div>
+      </div>
+      <div id="search-container">
+        <input type="text" id="search-input" placeholder="Search tools..." autocomplete="off" aria-label="Search OSINT tools" data-sharkid="__0">
+        <div id="search-results" role="listbox" aria-label="Search results"></div>
+      </div>
+    <svg viewBox="0 0 1280 1101" preserveAspectRatio="xMidYMid meet"><g transform="translate(180,24.046875) scale(1.3854029605263158)"><path class="link" d="M0,380C90,380,90,11.515,180,11.515"></path><path class="link" d="M0,380C90,380,90,34.545,180,34.545"></path><path class="link" d="M0,380C90,380,90,57.576,180,57.576"></path><path class="link" d="M0,380C90,380,90,80.606,180,80.606"></path><path class="link" d="M0,380C90,380,90,103.636,180,103.636"></path><path class="link" d="M0,380C90,380,90,126.667,180,126.667"></path><path class="link" d="M0,380C90,380,90,149.697,180,149.697"></path><path class="link" d="M0,380C90,380,90,172.727,180,172.727"></path><path class="link" d="M0,380C90,380,90,195.758,180,195.758"></path><path class="link" d="M0,380C90,380,90,218.788,180,218.788"></path><path class="link" d="M0,380C90,380,90,241.818,180,241.818"></path><path class="link" d="M0,380C90,380,90,264.848,180,264.848"></path><path class="link" d="M0,380C90,380,90,287.879,180,287.879"></path><path class="link" d="M0,380C90,380,90,310.909,180,310.909"></path><path class="link" d="M0,380C90,380,90,333.939,180,333.939"></path><path class="link" d="M0,380C90,380,90,356.97,180,356.97"></path><path class="link" d="M0,380C90,380,90,380,180,380"></path><path class="link" d="M0,380C90,380,90,403.03,180,403.03"></path><path class="link" d="M0,380C90,380,90,426.061,180,426.061"></path><path class="link" d="M0,380C90,380,90,449.091,180,449.091"></path><path class="link" d="M0,380C90,380,90,472.121,180,472.121"></path><path class="link" d="M0,380C90,380,90,495.152,180,495.152"></path><path class="link" d="M0,380C90,380,90,518.182,180,518.182"></path><path class="link" d="M0,380C90,380,90,541.212,180,541.212"></path><path class="link" d="M0,380C90,380,90,564.242,180,564.242"></path><path class="link" d="M0,380C90,380,90,587.273,180,587.273"></path><path class="link" d="M0,380C90,380,90,610.303,180,610.303"></path><path class="link" d="M0,380C90,380,90,633.333,180,633.333"></path><path class="link" d="M0,380C90,380,90,656.364,180,656.364"></path><path class="link" d="M0,380C90,380,90,679.394,180,679.394"></path><path class="link" d="M0,380C90,380,90,702.424,180,702.424"></path><path class="link" d="M0,380C90,380,90,725.455,180,725.455"></path><path class="link" d="M0,380C90,380,90,748.485,180,748.485"></path><g class="node" transform="translate(180, 748.48486328125)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Training</tspan></text></a><title></title></g><g class="node" transform="translate(180, 725.4545288085938)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Documentation / Evidence Capture</tspan></text></a><title></title></g><g class="node" transform="translate(180, 702.4242553710938)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>OpSec</tspan></text></a><title></title></g><g class="node" transform="translate(180, 679.3939208984375)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Cyber Threat Intelligence</tspan></text></a><title></title></g><g class="node" transform="translate(180, 656.3636474609375)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Malicious File Analysis</tspan></text></a><title></title></g><g class="node" transform="translate(180, 633.3333129882812)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>AI Tools</tspan></text></a><title></title></g><g class="node" transform="translate(180, 610.3030395507812)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Tools</tspan></text></a><title></title></g><g class="node" transform="translate(180, 587.272705078125)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Encoding / Decoding</tspan></text></a><title></title></g><g class="node" transform="translate(180, 564.242431640625)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Classifieds</tspan></text></a><title></title></g><g class="node" transform="translate(180, 541.2120971679688)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Blockchain &amp; Cryptocurrency</tspan></text></a><title></title></g><g class="node" transform="translate(180, 518.1818237304688)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Disinformation &amp; Media Verification</tspan></text></a><title></title></g><g class="node" transform="translate(180, 495.1515197753906)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Dark Web</tspan></text></a><title></title></g><g class="node" transform="translate(180, 472.1212158203125)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Mobile OSINT</tspan></text></a><title></title></g><g class="node" transform="translate(180, 449.0909118652344)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Language Translation</tspan></text></a><title></title></g><g class="node" transform="translate(180, 426.06060791015625)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Archives</tspan></text></a><title></title></g><g class="node" transform="translate(180, 403.0303039550781)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Online Communities</tspan></text></a><title></title></g><g class="node" transform="translate(180, 380)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Search Engines</tspan></text></a><title></title></g><g class="node" transform="translate(180, 356.9696960449219)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Geolocation Tools / Maps</tspan></text></a><title></title></g><g class="node" transform="translate(180, 333.93939208984375)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Transportation</tspan></text></a><title></title></g><g class="node" transform="translate(180, 310.9090881347656)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Business Records</tspan></text></a><title></title></g><g class="node" transform="translate(180, 287.8787841796875)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Compliance &amp; Risk Intelligence</tspan></text></a><title></title></g><g class="node" transform="translate(180, 264.8484802246094)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Public Records</tspan></text></a><title></title></g><g class="node" transform="translate(180, 241.81817626953125)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Telephone Numbers</tspan></text></a><title></title></g><g class="node" transform="translate(180, 218.78787231445312)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Dating</tspan></text></a><title></title></g><g class="node" transform="translate(180, 195.757568359375)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>People Search Engines</tspan></text></a><title></title></g><g class="node" transform="translate(180, 172.72727966308594)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Instant Messaging</tspan></text></a><title></title></g><g class="node" transform="translate(180, 149.6969757080078)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Social Networks</tspan></text></a><title></title></g><g class="node" transform="translate(180, 126.66666412353516)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Images / Videos / Docs</tspan></text></a><title></title></g><g class="node" transform="translate(180, 103.63636016845703)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>IP &amp; MAC Address</tspan></text></a><title></title></g><g class="node" transform="translate(180, 80.60606384277344)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Cloud Infrastructure</tspan></text></a><title></title></g><g class="node" transform="translate(180, 57.57575607299805)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Domain Name</tspan></text></a><title></title></g><g class="node" transform="translate(180, 34.54545593261719)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Email Address</tspan></text></a><title></title></g><g class="node" transform="translate(180, 11.515151977539062)"><circle r="6" style="fill: rgb(58, 58, 58); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>Username</tspan></text></a><title></title></g><g class="node" transform="translate(0,380)"><circle r="6" style="fill: rgb(26, 26, 26); stroke: rgb(70, 130, 180);"></circle><a target="_blank"><text x="-10" dy=".35em" text-anchor="end" style="fill: rgb(153, 153, 153); fill-opacity: 1; font-weight: normal;"><tspan>OSINT Framework</tspan></text></a><title></title></g></g></svg></div>
+
+    <!-- Tool details panel -->
+    <div id="panel-overlay"></div>
+    <div id="tool-panel" role="complementary" aria-label="Tool details">
+      <div id="panel-header">
+        <div id="panel-header-text">
+          <span id="panel-title"></span>
+          <div id="panel-breadcrumb" class="empty"></div>
+        </div>
+        <button id="panel-close" aria-label="Close panel">✕</button>
+      </div>
+      <div id="panel-body">
+        <div id="panel-cta-section" class="empty">
+          <a id="panel-open-tool" href="https://osintframework.com/#" target="_blank" rel="noopener noreferrer">Open Tool →</a>
+        </div>
+
+        <hr class="panel-divider">
+
+        <div id="panel-badges" class="empty"></div>
+
+        <div id="panel-description-section" class="empty">
+          <span class="panel-section-label">Description</span>
+          <span id="panel-description"></span>
+        </div>
+
+        <div id="panel-usage-section" class="empty">
+          <span class="panel-section-label">Usage Context</span>
+          <span id="panel-usage"></span>
+        </div>
+
+        <div id="panel-io-section" class="empty">
+          <span class="panel-section-label">Input → Output</span>
+          <span id="panel-io"></span>
+        </div>
+
+        <hr class="panel-divider">
+
+        <div id="panel-opsec-section" class="empty">
+          <span class="panel-section-label">OPSEC Notes</span>
+          <span id="panel-opsec"></span>
+        </div>
+
+        <div id="panel-rating-section" class="empty">
+          <span class="panel-section-label">Community Rating</span>
+          <div id="panel-rating-row">
+            <div id="star-rating">
+              <button class="star-zero-btn" data-value="0" aria-label="Rate 0 stars" title="0 stars">0</button>
+              <span class="star-pos" data-star="1">
+                <span class="star-icon">★</span>
+                <button class="star-click star-left" data-value="0.5" aria-label="Rate 0.5 stars"></button>
+                <button class="star-click star-right" data-value="1" aria-label="Rate 1 star"></button>
+              </span>
+              <span class="star-pos" data-star="2">
+                <span class="star-icon">★</span>
+                <button class="star-click star-left" data-value="1.5" aria-label="Rate 1.5 stars"></button>
+                <button class="star-click star-right" data-value="2" aria-label="Rate 2 stars"></button>
+              </span>
+              <span class="star-pos" data-star="3">
+                <span class="star-icon">★</span>
+                <button class="star-click star-left" data-value="2.5" aria-label="Rate 2.5 stars"></button>
+                <button class="star-click star-right" data-value="3" aria-label="Rate 3 stars"></button>
+              </span>
+              <span class="star-pos" data-star="4">
+                <span class="star-icon">★</span>
+                <button class="star-click star-left" data-value="3.5" aria-label="Rate 3.5 stars"></button>
+                <button class="star-click star-right" data-value="4" aria-label="Rate 4 stars"></button>
+              </span>
+              <span class="star-pos" data-star="5">
+                <span class="star-icon">★</span>
+                <button class="star-click star-left" data-value="4.5" aria-label="Rate 4.5 stars"></button>
+                <button class="star-click star-right" data-value="5" aria-label="Rate 5 stars"></button>
+              </span>
+            </div>
+            <span id="rating-avg">…</span>
+          </div>
+        </div>
+
+      </div>
+      <div id="panel-footer">
+        <div id="panel-report-section">
+          <span class="panel-section-label">Report an Issue</span>
+          <div id="panel-report-buttons">
+            <button class="report-btn" data-type="dead_link">Dead link</button>
+            <button class="report-btn" data-type="paywalled">Paywalled</button>
+            <button class="report-btn" data-type="incorrect_info">Incorrect info</button>
+          </div>
+          <div id="panel-report-feedback" class="panel-report-feedback hidden"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./OSINT Framework_files/arf.js.download"></script>
+
+    <div class="legend"><p>
+    <span class="badge badge-T">T</span> - Indicates a link to a tool that must be installed and run locally<br>
+    <span class="badge badge-D">D</span> - Google Dork, for more information: <a href="https://en.wikipedia.org/wiki/Google_hacking">Google Hacking</a><br>
+    <span class="badge badge-R">R</span> - Requires registration<br>
+    <span class="badge badge-M">M</span> - Indicates a URL that contains the search term and the URL itself must be edited manually<br>
+    </p>
+    <script>
+      (function() {
+        var isLight = localStorage.getItem("theme") === "light";
+        var btn = document.getElementById("header-theme-toggle");
+        if (btn) btn.textContent = isLight ? "Dark Mode" : "Light Mode";
+      })();
+    </script>
+    </div>
+
+    <div id="notes-content">
+      <h3>Notes</h3>
+      OSINT framework focused on gathering information from free tools or resources.  The intention is to help people find free OSINT resources.  Some of the sites included might require registration or offer more data for $$$, but you should be able to get at least a portion of the available information for no cost.<br>
+
+      <p>I originally created this framework with an information security point of view.  Since then, the response from other fields and disciplines has been incredible.  I would love to be able to include any other OSINT resources, especially from fields outside of infosec.  Please let me know about anything that might be missing!</p>
+
+      <h3>For Update Notifications</h3>
+      Follow me on Twitter: <a href="https://twitter.com/jnordine">@jnordine</a><br>
+      Watch or star the project on Github: <a href="https://github.com/lockfale/osint-framework">https://github.com/lockfale/osint-framework</a>
+
+      <h3>Suggestions, Comments, Feedback</h3>
+      Feedback or new tool suggestions are extremely welcome!  Please feel free to reach out on Twitter or submit an issue on Github.
+    </div>
+
+    <!-- Mobile notes button (visible only on mobile) -->
+    <button id="mobile-notes-btn" onclick="toggleNotesPanel()">Notes</button>
+
+    <!-- Mobile notes overlay panel -->
+    <div id="notes-overlay"></div>
+    <div id="notes-panel">
+      <div id="notes-panel-header">
+        <span id="notes-panel-title">Notes</span>
+        <button id="notes-panel-close" onclick="toggleNotesPanel()" aria-label="Close notes">✕</button>
+      </div>
+      <div id="notes-panel-body"></div>
+    </div>
+
+  <script type="module" src="./OSINT Framework_files/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;05c17a29f4e54d8185ee37e5618e2310&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+
+
+</body></html>

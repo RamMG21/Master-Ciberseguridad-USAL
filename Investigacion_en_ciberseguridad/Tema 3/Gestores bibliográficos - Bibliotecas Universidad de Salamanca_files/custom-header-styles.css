@@ -1,0 +1,89 @@
+/* 🔹 Contenedor principal con fondo */
+.dynamic-header-section {
+    display: flex;
+    justify-content: flex-start; /* 🔹 Alineado a la izquierda en escritorio */
+    align-items: center;
+    text-align: left;
+    padding: 10px 5%;
+    min-height: 60px;
+    height: auto;
+    width: 100%;
+    position: relative;
+    background: url('TU_IMAGEN_AQUI') center/cover no-repeat;
+}
+
+/* 🔹 Fondo con opacidad (Overlay) */
+.dynamic-header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.628); /* 🔹 Restaura la opacidad */
+}
+
+/* 🔹 Contenedor flexible con ancho máximo */
+.dynamic-header-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 1380px;
+    width: 100%;
+    padding: 5px;
+    z-index: 2;
+    margin: 0 auto;
+}
+
+/* 🔹 Texto del título en mayúsculas con corrección de tamaño */
+.dynamic-header-section .page-title {
+    font-size: calc(1.2vw + 0.5rem);
+    max-width: 90%;
+    white-space: nowrap;
+    text-align: left;
+    line-height: 1.1;
+    margin: 0;
+    text-transform: uppercase;
+    color: white; /* 🔹 Asegura que el texto sea visible sobre el overlay */
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5); /* 🔹 Restaura el sombreado */
+}
+
+/* 🔹 Ajustes para tablets */
+@media (max-width: 1024px) {
+    .dynamic-header-section {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .dynamic-header-content {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .dynamic-header-section .page-title {
+        font-size: 1.1rem;
+        max-width: 95%;
+        white-space: normal;
+    }
+}
+
+/* 🔹 Ajustes para móviles */
+@media (max-width: 600px) {
+    .dynamic-header-section {
+        justify-content: center;
+        text-align: center;
+        padding: 5px 1%;
+    }
+
+    .dynamic-header-content {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .dynamic-header-section .page-title {
+        font-size: 1rem;
+        max-width: 98%;
+        text-align: center;
+        white-space: normal;
+    }
+}

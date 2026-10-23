@@ -1,0 +1,12 @@
+ // Añade gtag a DOM
+  var gtagScript = document.createElement("script");
+            gtagScript.type = "text/javascript";
+            gtagScript.setAttribute("async", "true");
+            gtagScript.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-FY6YM8NFZ6"); //, UA-80841592-1");
+            document.documentElement.firstChild.appendChild(gtagScript);
+  // Window dataLayer
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FY6YM8NFZ6');
+//  gtag('config', 'UA-80841592-1');
